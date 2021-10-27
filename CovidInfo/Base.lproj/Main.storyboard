@@ -74,23 +74,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGW-9r-Iaf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="317"/>
+            <point key="canvasLocation" x="154" y="317"/>
         </scene>
-        <!--Preferences-->
+        <!--Feed!-->
         <scene sceneID="0BY-4B-Yxw">
             <objects>
-                <viewController id="z5m-85-4yh" customClass="PreferencesViewController" customModule="CovidInfo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z5m-85-4yh" customClass="FeedViewController" customModule="CovidInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6BL-KE-8l7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-1t-4Jm">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="B3v-i2-vT8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B3v-i2-vT8" firstAttribute="bottom" secondItem="L1I-1t-4Jm" secondAttribute="bottom" id="EKW-8O-4mQ"/>
+                            <constraint firstItem="B3v-i2-vT8" firstAttribute="trailing" secondItem="L1I-1t-4Jm" secondAttribute="trailing" id="IJ3-wK-eX6"/>
+                            <constraint firstItem="L1I-1t-4Jm" firstAttribute="top" secondItem="B3v-i2-vT8" secondAttribute="top" id="WGI-7k-h6Q"/>
+                            <constraint firstItem="L1I-1t-4Jm" firstAttribute="leading" secondItem="B3v-i2-vT8" secondAttribute="leading" id="mT2-Mf-xl9"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Preferences" id="NfJ-uz-YTf"/>
+                    <navigationItem key="navigationItem" title="Feed!" id="NfJ-uz-YTf"/>
+                    <connections>
+                        <outlet property="table" destination="L1I-1t-4Jm" id="83O-h5-f0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBS-G7-pFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="-445"/>
+            <point key="canvasLocation" x="90" y="-445"/>
         </scene>
     </scenes>
     <resources>

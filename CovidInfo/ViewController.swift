@@ -13,7 +13,7 @@ class ViewController: UIViewController, ChartViewDelegate {
     // Delegate - if user interacts with chart
     
     var lineChart = LineChartView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChart.delegate = self
@@ -22,7 +22,6 @@ class ViewController: UIViewController, ChartViewDelegate {
             self.draw(data: data)
         }
     }
-    
     
     private func getData(completion: @escaping ([HospitalData]) -> ()) {
 
@@ -51,6 +50,7 @@ class ViewController: UIViewController, ChartViewDelegate {
 //        self.draw(data)
     }
     
+    
     private func draw(data: [HospitalData]) {
         
         // Init chart
@@ -58,10 +58,11 @@ class ViewController: UIViewController, ChartViewDelegate {
         lineChart.center = view.center
         view.addSubview(lineChart)
         
-//        lineChart.backgroundColor = .systemGray3
         lineChart.backgroundColor = .lightGray
+        
+    
 
-        lineChart.animate(xAxisDuration: 2.5)
+        lineChart.animate(xAxisDuration: 1.5)
         
         lineChart.rightAxis.enabled = false
         
@@ -137,18 +138,6 @@ class ViewController: UIViewController, ChartViewDelegate {
         
         
         lineChart.legend.textColor = .white
-                
-        // Create legend
-//        let hospLegendEntry = LegendEntry()
-//        hospLegendEntry.formColor = .white
-//        hospLegendEntry.label = "Hospitalizirani"
-//
-//        let icuLegendEntry = LegendEntry()
-//        icuLegendEntry.formColor = .systemRed
-//        icuLegendEntry.label = "Intenzivna terapija"
-//
-//        lineChart.legend.textColor = .white
-//        lineChart.legend.setCustom(entries: [hospLegendEntry, icuLegendEntry])
     }
     
     private func createDate(day: Int, month: Int, year: Int) -> Date {
@@ -163,27 +152,32 @@ class ViewController: UIViewController, ChartViewDelegate {
         return userCalendar.date(from: dateComponents)!
     }
     
+    struct HospitalData: Codable {
+        let year: Int
+        let month: Int
+        let day: Int
+        let overall: OverallData
+        
+        struct OverallData: Codable {
+            let beds: AmountData
+            let icu: AmountData
+            let vents: AmountData
+        }
+        
+        struct AmountData: Codable {
+            let total: Int
+            let max: Int
+            let occupied: Int
+            let free: Int
+        }
+
+    }
+
+
+    
+    
 }
 
-struct HospitalData: Codable {
-    let year: Int
-    let month: Int
-    let day: Int
-    let overall: OverallData
-}
-
-struct OverallData: Codable {
-    let beds: AmountData
-    let icu: AmountData
-    let vents: AmountData
-}
-
-struct AmountData: Codable {
-    let total: Int
-    let max: Int
-    let occupied: Int
-    let free: Int
-}
 
 
 
