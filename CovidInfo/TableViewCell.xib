@@ -13,23 +13,24 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="476" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="CovidInfo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="453" height="476"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="453" height="476"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arG-rF-mm6" userLabel="ChartContainerView">
-                        <rect key="frame" x="0.0" y="-33" width="453" height="450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="453" height="476"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="450" id="6Sd-ps-ReU"/>
+                            <constraint firstAttribute="width" constant="453" id="Z2Z-qI-CDR"/>
+                            <constraint firstAttribute="height" constant="476" id="lzR-DA-elt"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="arG-rF-mm6" secondAttribute="trailing" constant="-20" id="HAH-P3-H9W"/>
-                    <constraint firstItem="arG-rF-mm6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-44" id="iY2-A6-cRn"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="arG-rF-mm6" secondAttribute="bottom" constant="-30" id="jOU-Gy-Lbv"/>
-                    <constraint firstItem="arG-rF-mm6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-20" id="nop-HW-aI4"/>
+                    <constraint firstAttribute="bottom" secondItem="arG-rF-mm6" secondAttribute="bottom" id="DyR-EL-CA8"/>
+                    <constraint firstItem="arG-rF-mm6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Qce-Qe-kwD"/>
+                    <constraint firstAttribute="trailing" secondItem="arG-rF-mm6" secondAttribute="trailing" id="coH-gP-DOI"/>
+                    <constraint firstItem="arG-rF-mm6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wv8-cR-vyP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

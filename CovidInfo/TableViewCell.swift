@@ -4,18 +4,13 @@ import Charts
 class TableViewCell: UITableViewCell {
 
     @IBOutlet var chartTitle: UILabel!
-    
-    
     @IBOutlet var chartContainerView: UIView!
-    
 
     let lineChart = LineChartView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         chartContainerView.addSubview(lineChart)
-        
-        
     }
     
     static let identifier = "TableViewCell"
@@ -33,11 +28,10 @@ class TableViewCell: UITableViewCell {
     
     func configure(with chart: Chart) {
         
-        lineChart.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        lineChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
         lineChart.data = LineChartData(dataSets: chart.datasets)
         
-//        lineChart.center = self.center
-        lineChart.backgroundColor = .gray
+        lineChart.backgroundColor = .black
         lineChart.animate(xAxisDuration: 1.5)
         lineChart.rightAxis.enabled = false
         lineChart.xAxis.setLabelCount(6, force: true)

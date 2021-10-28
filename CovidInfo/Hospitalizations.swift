@@ -1,3 +1,4 @@
+
 import Foundation
 import Charts
 
@@ -10,20 +11,19 @@ private func createDatasets(data: [HospitalData]) -> [IChartDataSet] {
         hospiralizedData.append(ChartDataEntry(x: Double(i), y: hospitalized))
     }
     
+    
+    let hospSet = LineChartDataSet(entries: hospiralizedData)
+    hospSet.label = "Hospitalizirani"
+    hospSet.mode = .cubicBezier
+    hospSet.cubicIntensity = 1
+    hospSet.lineWidth = 2
+    hospSet.drawCirclesEnabled = false
+    hospSet.setColor(.systemBlue)
 
-    let set = LineChartDataSet(entries: hospiralizedData)
-    set.label = "Hospitalizirani"
-    set.mode = .cubicBezier
-    set.cubicIntensity = 1
-    set.lineWidth = 2
-    set.drawCirclesEnabled = false
-    set.setColor(.systemBlue)
-
-    set.fillColor = .systemBlue
-    set.fillAlpha = 0.3
-    set.drawFilledEnabled = true;
-    set.drawHorizontalHighlightIndicatorEnabled = false
-
+    hospSet.fillColor = .systemBlue
+    hospSet.fillAlpha = 0.3
+    hospSet.drawFilledEnabled = true;
+    hospSet.drawHorizontalHighlightIndicatorEnabled = false
     
     // 'Intenzivna terapija' data
     var icuData = [ChartDataEntry]()
@@ -31,21 +31,20 @@ private func createDatasets(data: [HospitalData]) -> [IChartDataSet] {
         icuData.append(ChartDataEntry(x: Double(i), y: Double(el.overall.icu.occupied)))
     }
 
-    let set2 = LineChartDataSet(entries: icuData)
-    set2.mode = .cubicBezier
-    set2.label = "Intenzivna terapija"
-    set2.cubicIntensity = 1
-    set2.lineWidth = 2
-    set2.drawCirclesEnabled = false
-    set2.setColor(.systemRed)
+    let icuSet = LineChartDataSet(entries: icuData)
+    icuSet.mode = .cubicBezier
+    icuSet.label = "Intenzivna terapija"
+    icuSet.cubicIntensity = 1
+    icuSet.lineWidth = 2
+    icuSet.drawCirclesEnabled = false
+    icuSet.setColor(.systemRed)
 
-    set2.fillColor = .systemRed
-    set2.fillAlpha = 0.7
-    set2.drawFilledEnabled = true;
-    set2.drawHorizontalHighlightIndicatorEnabled = false
+    icuSet.fillColor = .systemRed
+    icuSet.fillAlpha = 0.7
+    icuSet.drawFilledEnabled = true;
+    icuSet.drawHorizontalHighlightIndicatorEnabled = false
     
-    return [set, set2]
-    
+    return [hospSet, icuSet]
 }
 
 public func getHospitalizationData(completion: @escaping (Chart) -> ()) {
@@ -83,7 +82,7 @@ public func getHospitalizationData(completion: @escaping (Chart) -> ()) {
 }
 
 
-public struct HospitalData: Codable {
+struct HospitalData: Codable {
     let year: Int
     let month: Int
     let day: Int
@@ -103,19 +102,3 @@ public struct HospitalData: Codable {
     }
 
 }
-
-private func createDate(day: Int, month: Int, year: Int) -> Date {
-    var dateComponents = DateComponents()
-    
-    dateComponents.day = day
-    dateComponents.month = month
-    dateComponents.year = year
-    dateComponents.timeZone = TimeZone(abbreviation: "GMT+1")
-    
-    let userCalendar = Calendar(identifier: .gregorian)
-    return userCalendar.date(from: dateComponents)!
-}
-
-
-
-
