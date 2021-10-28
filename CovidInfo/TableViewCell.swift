@@ -1,10 +1,3 @@
-//
-//  TableViewCell.swift
-//  CovidInfo
-//
-//  Created by Zan Spiler on 27/10/2021.
-//
-
 import UIKit
 import Charts
 
@@ -12,14 +5,17 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet var chartTitle: UILabel!
     
-    @IBOutlet var chartContainer: UIView!
+    
+    @IBOutlet var chartContainerView: UIView!
+    
 
     let lineChart = LineChartView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        chartContainerView.addSubview(lineChart)
         
-        chartContainer.addSubview(lineChart)
+        
     }
     
     static let identifier = "TableViewCell"
@@ -33,70 +29,39 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(with model: Int) {
+    
+    
+    func configure(with chart: Chart) {
         
-        print("configure: ")
-        print(model)
-//        self.chartTitle.text = model.chartTitle
-//        lineChart = LineChartView()
-//
-////        self.v = lineChart
-//
-////        v.addSubview(lineChart)
-//
-//        // Init chart
-//        lineChart.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-////        lineChart.center = view.center
-////        self.view.addSubview(lineChart)
-//
-//        lineChart.backgroundColor = .red
-//
-//        var icuData = [ChartDataEntry]()
-//        for i in 1...10 {
-//            icuData.append(ChartDataEntry(x: Double(i), y: Double(i)))
-//        }
-//
-//        let set2 = LineChartDataSet(entries: icuData)
-//        set2.mode = .cubicBezier
-//        set2.label = "Intenzivna terapija"
-//        set2.cubicIntensity = 1
-//        set2.lineWidth = 2
-//        set2.drawCirclesEnabled = false
-//        set2.setColor(.systemRed)
-//
-//        set2.fillColor = .systemRed
-//        set2.fillAlpha = 0.7
-//        set2.drawFilledEnabled = true;
-//        set2.drawHorizontalHighlightIndicatorEnabled = false
-//
-//        lineChart.data = LineChartData(dataSets: [set2])
+        lineChart.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        lineChart.data = LineChartData(dataSets: chart.datasets)
         
-        lineChart.frame = CGRect(x: 0, y: 0, width: 335, height: 409)
-
-        var icuData = [ChartDataEntry]()
-        for i in 1...10 {
-            icuData.append(ChartDataEntry(x: Double(i), y: Double(i)))
-        }
-
-        let set2 = LineChartDataSet(entries: icuData)
-        set2.mode = .cubicBezier
-        set2.label = "Intenzivna terapija"
-        set2.cubicIntensity = 1
-        set2.lineWidth = 2
-        set2.drawCirclesEnabled = false
-        set2.setColor(.systemRed)
-
-        set2.fillColor = .systemRed
-        set2.fillAlpha = 0.7
-        set2.drawFilledEnabled = true;
-        set2.drawHorizontalHighlightIndicatorEnabled = false
-
-        lineChart.data = LineChartData(dataSets: [set2])
-
+//        lineChart.center = self.center
+        lineChart.backgroundColor = .gray
+        lineChart.animate(xAxisDuration: 1.5)
+        lineChart.rightAxis.enabled = false
+        lineChart.xAxis.setLabelCount(6, force: true)
+        lineChart.xAxis.labelTextColor = .white
+        lineChart.leftAxis.setLabelCount(6, force: false)
+        lineChart.leftAxis.labelTextColor = .white
+        lineChart.leftAxis.axisLineColor = .white
+        lineChart.leftAxis.labelPosition = .outsideChart
+                
+        // X-axis
+        lineChart.xAxis.labelPosition = .bottom
+        lineChart.xAxis.drawLabelsEnabled = true
+        lineChart.xAxis.drawLimitLinesBehindDataEnabled = true
+        lineChart.xAxis.avoidFirstLastClippingEnabled = true
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "sl")
+        dateFormatter.dateFormat = "dd MMM"
+        
+        lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: chart.dates.map { dateFormatter.string(from: $0) })
+        lineChart.xAxis.setLabelCount(6, force: false)
+      
+        lineChart.legend.textColor = .white
         
     }
-    
-
-
     
 }

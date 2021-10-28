@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CovidInfo
-//
-//  Created by Zan Spiler on 24/10/2021.
-//
-
 import UIKit
 
 @main

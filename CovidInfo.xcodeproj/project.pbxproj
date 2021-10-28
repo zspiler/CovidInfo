@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370CA89C272A9977005FA9E8 /* Hospitalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CA89B272A9977005FA9E8 /* Hospitalizations.swift */; };
 		378618172725AA9A00892A1A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378618162725AA9A00892A1A /* PreferencesViewController.swift */; };
 		379C905F2725A5FA009594E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C905E2725A5FA009594E2 /* AppDelegate.swift */; };
 		379C90612725A5FA009594E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C90602725A5FA009594E2 /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370CA89B272A9977005FA9E8 /* Hospitalizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospitalizations.swift; sourceTree = "<group>"; };
 		378618162725AA9A00892A1A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		379C905B2725A5FA009594E2 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379C905E2725A5FA009594E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				37F4D7992729B67300078083 /* FeedViewController.swift */,
 				37C035102729C19700F156E0 /* TableViewCell.swift */,
 				37C035112729C19700F156E0 /* TableViewCell.xib */,
+				370CA89B272A9977005FA9E8 /* Hospitalizations.swift */,
 			);
 			path = CovidInfo;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				379C90632725A5FA009594E2 /* ViewController.swift in Sources */,
 				37F4D79A2729B67300078083 /* FeedViewController.swift in Sources */,
 				37C035122729C19700F156E0 /* TableViewCell.swift in Sources */,
+				370CA89C272A9977005FA9E8 /* Hospitalizations.swift in Sources */,
 				379C905F2725A5FA009594E2 /* AppDelegate.swift in Sources */,
 				379C90612725A5FA009594E2 /* SceneDelegate.swift in Sources */,
 			);

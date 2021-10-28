@@ -1,10 +1,3 @@
-//
-//  SecondViewController.swift
-//  CovidInfo
-//
-//  Created by Zan Spiler on 24/10/2021.
-//
-
 import UIKit
 import Charts
 
@@ -58,6 +51,9 @@ class PreferencesViewController: UIViewController, ChartViewDelegate {
         lineChart.center = view.center
         view.addSubview(lineChart)
         
+        
+        lineChart.center = view.center
+
 
         lineChart.backgroundColor = .lightGray
 
@@ -73,49 +69,6 @@ class PreferencesViewController: UIViewController, ChartViewDelegate {
         lineChart.leftAxis.axisLineColor = .white
         lineChart.leftAxis.labelPosition = .outsideChart
 
-        
-        // 'deliveredToDate' data
-//        var deliveredToDateData = [ChartDataEntry]()
-//        for (i, el) in data.enumerated() {
-//            deliveredToDateData.append(ChartDataEntry(x: Double(i), y: Double(el.deliveredToDate)))
-//        }
-//
-//        let set = LineChartDataSet(entries: deliveredToDateData)
-//        set.label = "Št. dostavljenih doz"
-//        set.mode = .cubicBezier
-//        set.cubicIntensity = 1
-//        set.lineWidth = 2
-//        set.drawCirclesEnabled = false
-//        set.setColor(.systemBlue)
-//
-//        set.fillColor = .systemBlue
-//        set.fillAlpha = 0.3
-//        set.drawFilledEnabled = true;
-//        set.drawHorizontalHighlightIndicatorEnabled = false
-
-        
-        
-        // RAZLIKA MED USED TO DATE & ADMINISTERED TO DATE?
-        
-        // 'used to-date' data
-//        var usedToDateData = [ChartDataEntry]()
-//        for (i, el) in data.enumerated() {
-//            usedToDateData.append(ChartDataEntry(x: Double(i), y: Double(el.usedToDate ?? 0)))
-//        }
-//
-//        let set2 = LineChartDataSet(entries: usedToDateData)
-//        set2.label = "Used doses to date"
-//        set2.mode = .cubicBezier
-//        set2.cubicIntensity = 1
-//        set2.lineWidth = 2
-//        set2.drawCirclesEnabled = false
-//        set2.setColor(.systemBlue)
-//
-//        set2.fillColor = .systemBlue
-//        set2.fillAlpha = 0.3
-//        set2.drawFilledEnabled = true;
-//        set2.drawHorizontalHighlightIndicatorEnabled = false
-        
         
         // MODERNA used
         var usedModerna = [ChartDataEntry]()

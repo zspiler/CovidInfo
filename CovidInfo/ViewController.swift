@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  CovidInfo
-//
-//  Created by Zan Spiler on 24/10/2021.
-//
-
 import UIKit
 import Charts
 
@@ -59,8 +52,6 @@ class ViewController: UIViewController, ChartViewDelegate {
         view.addSubview(lineChart)
         
         lineChart.backgroundColor = .lightGray
-        
-    
 
         lineChart.animate(xAxisDuration: 1.5)
         
@@ -80,6 +71,7 @@ class ViewController: UIViewController, ChartViewDelegate {
             let hospitalized = Double(el.overall.icu.occupied + el.overall.beds.occupied)
             hospiralizedData.append(ChartDataEntry(x: Double(i), y: hospitalized))
         }
+        
     
         let set = LineChartDataSet(entries: hospiralizedData)
         set.label = "Hospitalizirani"
