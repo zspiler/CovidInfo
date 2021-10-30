@@ -29,7 +29,6 @@
         <!--Home-->
         <scene sceneID="raA-Mx-VPb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oJp-g6-y6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="1z6-Vo-QmL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="a8x-Bo-bUX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="epk-SJ-R1i">
@@ -40,6 +39,7 @@
                         <segue destination="z5m-85-4yh" kind="relationship" relationship="rootViewController" id="II5-S8-mQA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJp-g6-y6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-778" y="317"/>
         </scene>
@@ -60,22 +60,21 @@
             </objects>
             <point key="canvasLocation" x="-794" y="-445"/>
         </scene>
-        <!--Charts-->
+        <!--Podatki-->
         <scene sceneID="0BY-4B-Yxw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MBS-G7-pFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="z5m-85-4yh" customClass="ViewController" customModule="CovidInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6BL-KE-8l7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-1t-4Jm">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-1t-4Jm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B3v-i2-vT8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.90980392156862744" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="B3v-i2-vT8" firstAttribute="bottom" secondItem="L1I-1t-4Jm" secondAttribute="bottom" id="EKW-8O-4mQ"/>
                             <constraint firstItem="B3v-i2-vT8" firstAttribute="trailing" secondItem="L1I-1t-4Jm" secondAttribute="trailing" id="IJ3-wK-eX6"/>
@@ -83,27 +82,28 @@
                             <constraint firstItem="L1I-1t-4Jm" firstAttribute="leading" secondItem="B3v-i2-vT8" secondAttribute="leading" id="mT2-Mf-xl9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Charts" id="NfJ-uz-YTf"/>
+                    <navigationItem key="navigationItem" title="Podatki" largeTitleDisplayMode="never" id="NfJ-uz-YTf"/>
                     <connections>
                         <outlet property="table" destination="L1I-1t-4Jm" id="83O-h5-f0h"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBS-G7-pFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="467" y="317"/>
         </scene>
-        <!--Preferences-->
+        <!--Nastavitve-->
         <scene sceneID="Yz4-d5-Q6u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QTr-u6-aYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Ub7-Ba-69O" customClass="PreferencesViewController" customModule="CovidInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iIs-dG-3GQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dfj-vU-rgh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95678204300000003" green="0.9451493621" blue="0.87048536539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Preferences" id="D6K-Xo-npS"/>
+                    <navigationItem key="navigationItem" title="Nastavitve" id="D6K-Xo-npS"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTr-u6-aYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="467" y="-445"/>
         </scene>

@@ -111,7 +111,7 @@ public func getVaccinationsData(completion: @escaping (Chart) -> ()) {
             
             DispatchQueue.main.async {
                 completion(
-                    Chart(title: "Vacc stuff",
+                    Chart(title: "Cepljenje",
                           datasets: createDatasets(data: res),
                           dates: dates
                     )
