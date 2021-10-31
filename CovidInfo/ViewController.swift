@@ -17,10 +17,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.delegate = self
         table.dataSource = self
     
-        let placeholderChart = Chart(title: "", type: ChartType.Line, datasets: [], dates: [], labels:[])
+        let placeholder = Chart(title: "", type: ChartType.Line, datasets: [], dates: [], labels:[])
         
         // TODO: display loading animtion in placeholders
-        self.charts = [placeholderChart, placeholderChart, placeholderChart, placeholderChart]
+        self.charts = [placeholder, placeholder, placeholder, placeholder, placeholder]
         
         
         // Display charts
@@ -44,6 +44,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.charts[3].type = ChartType.Bar
             self.table.reloadData()
         }
+        
+        getDeathsData() { (data) in
+            self.charts[4] = data
+            self.table.reloadData()
+        }
 
     }
     
@@ -58,7 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        if (charts[indexPath.row].type == ChartType.Line) {
+        if charts[indexPath.row].type == ChartType.Line {
             let cell = tableView.dequeueReusableCell(withIdentifier: LineChartCell.identifier, for: indexPath) as! LineChartCell
             cell.configure(with: charts[indexPath.row])
             return cell

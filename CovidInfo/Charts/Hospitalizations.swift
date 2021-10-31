@@ -86,7 +86,7 @@ public func getHospitalizationData(completion: @escaping (Chart) -> ()) {
 }
 
 
-struct HospitalData: Codable {
+private struct HospitalData: Codable {
     let year: Int
     let month: Int
     let day: Int

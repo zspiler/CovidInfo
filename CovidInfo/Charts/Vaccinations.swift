@@ -33,7 +33,7 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     var usedAz = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
         // display every 5th data
-        if (i % 10 != 0) {
+        if i % 10 != 0 {
             continue
         }
         usedAz.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.az ?? 0)))
@@ -55,7 +55,7 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     var usedPfizer = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
         // display every 5th data
-        if (i % 10 != 0) {
+        if i % 10 != 0 {
             continue
         }
         usedPfizer.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.pfizer ?? 0)))
@@ -72,13 +72,12 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     pfizerSet.fillAlpha = 0.0
     pfizerSet.drawFilledEnabled = true;
     pfizerSet.drawHorizontalHighlightIndicatorEnabled = false
-    
-    
+
     // Janssen used
     var usedJanssen = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
         // display every 5th data
-        if (i % 10 != 0) {
+        if i % 10 != 0 {
             continue
         }
         usedJanssen.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.janssen ?? 0)))
@@ -96,9 +95,8 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     janssenSet.drawFilledEnabled = true;
     janssenSet.drawHorizontalHighlightIndicatorEnabled = false
     
-    return [mdrnSet, azSet, pfizerSet, janssenSet]
-
     
+    return [mdrnSet, azSet, pfizerSet, janssenSet]
 }
 
 public func getVaccinationsData(completion: @escaping (Chart) -> ()) {
@@ -140,7 +138,7 @@ public func getVaccinationsData(completion: @escaping (Chart) -> ()) {
 
 
 
-struct Vaccination: Codable {
+private struct Vaccination: Codable {
     let year: Int
     let month: Int
     let day: Int

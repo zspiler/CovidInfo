@@ -11,6 +11,7 @@
 		37269A0D272B38E600F02664 /* Vaccinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37269A0C272B38E600F02664 /* Vaccinations.swift */; };
 		37269A10272B39D200F02664 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37269A0F272B39D200F02664 /* Helpers.swift */; };
 		37269A13272B3AD500F02664 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37269A12272B3AD500F02664 /* Chart.swift */; };
+		3761632B272EFFBC00B06C7D /* Deaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761632A272EFFBC00B06C7D /* Deaths.swift */; };
 		378618172725AA9A00892A1A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378618162725AA9A00892A1A /* PreferencesViewController.swift */; };
 		379C905F2725A5FA009594E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C905E2725A5FA009594E2 /* AppDelegate.swift */; };
 		379C90612725A5FA009594E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C90602725A5FA009594E2 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		37269A0C272B38E600F02664 /* Vaccinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccinations.swift; sourceTree = "<group>"; };
 		37269A0F272B39D200F02664 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		37269A12272B3AD500F02664 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		3761632A272EFFBC00B06C7D /* Deaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deaths.swift; sourceTree = "<group>"; };
 		378618162725AA9A00892A1A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		379C905B2725A5FA009594E2 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379C905E2725A5FA009594E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37616329272EFF7800B06C7D /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				370CA89B272A9977005FA9E8 /* Hospitalizations.swift */,
+				37269A0C272B38E600F02664 /* Vaccinations.swift */,
+				37F51796272EA32700FD545F /* Cases.swift */,
+				37F51798272ED3DB00FD545F /* VaccinePopularity.swift */,
+				3761632A272EFFBC00B06C7D /* Deaths.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		379C90522725A5FA009594E2 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,7 @@
 		379C905D2725A5FA009594E2 /* CovidInfo */ = {
 			isa = PBXGroup;
 			children = (
+				37616329272EFF7800B06C7D /* Charts */,
 				379C905E2725A5FA009594E2 /* AppDelegate.swift */,
 				379C90602725A5FA009594E2 /* SceneDelegate.swift */,
 				379C90622725A5FA009594E2 /* ViewController.swift */,
@@ -97,12 +112,8 @@
 				37F5179C272EE6A500FD545F /* BarChartCell.swift */,
 				37C035112729C19700F156E0 /* LineChartCell.xib */,
 				37F5179A272EE69B00FD545F /* BarChartCell.xib */,
-				370CA89B272A9977005FA9E8 /* Hospitalizations.swift */,
-				37269A0C272B38E600F02664 /* Vaccinations.swift */,
 				37269A0F272B39D200F02664 /* Helpers.swift */,
 				37269A12272B3AD500F02664 /* Chart.swift */,
-				37F51796272EA32700FD545F /* Cases.swift */,
-				37F51798272ED3DB00FD545F /* VaccinePopularity.swift */,
 			);
 			path = CovidInfo;
 			sourceTree = "<group>";
@@ -251,6 +262,7 @@
 				370CA89C272A9977005FA9E8 /* Hospitalizations.swift in Sources */,
 				37F51799272ED3DB00FD545F /* VaccinePopularity.swift in Sources */,
 				379C905F2725A5FA009594E2 /* AppDelegate.swift in Sources */,
+				3761632B272EFFBC00B06C7D /* Deaths.swift in Sources */,
 				379C90612725A5FA009594E2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

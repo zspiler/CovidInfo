@@ -20,8 +20,9 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     // set.sort(by: { $0.y < $1.y })
     
     let set = BarChartDataSet(entries: entries)
-    set.colors = ChartColorTemplates.pastel()
-    set.highlightAlpha = 0.6
+    set.colors = ChartColorTemplates.material()
+    
+    set.highlightAlpha = 0.2
     
     return [set]
     
@@ -56,4 +57,31 @@ public func getVaccinePopularityData(completion: @escaping (Chart) -> ()) {
             // TODO: display error
         }
     }).resume()
+}
+
+private struct Vaccination: Codable {
+    let year: Int
+    let month: Int
+    let day: Int
+    
+    let administered: Administered
+    let administered2nd: Administered
+    let administered3rd: Administered
+
+    let usedToDate: Int?
+    let deliveredToDate: Int
+    
+    let usedByManufacturer: Manufacturer
+    
+    struct Administered: Codable {
+        let today: Int?
+        let toDate: Int?
+    }
+    
+    struct Manufacturer: Codable {
+        let moderna: Int?
+        let az: Int?
+        let pfizer: Int?
+        let janssen: Int?
+    }
 }

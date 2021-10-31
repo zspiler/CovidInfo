@@ -57,6 +57,7 @@ class LineChartCell: UITableViewCell {
         
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: chart.dates.map { dateFormatter.string(from: $0) })
         lineChart.xAxis.setLabelCount(6, force: false)
+        
     }
     
 }

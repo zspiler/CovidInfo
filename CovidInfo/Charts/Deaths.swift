@@ -2,45 +2,47 @@ import Foundation
 import Charts
 
 
-private let title = "Stanje"
+private let title = "Smrti"
+
 
 private func createDatasets(data: [Stats]) -> [IChartDataSet] {
 
     // Cases confirmed each day
     var cases = [ChartDataEntry]()
- 
+
+    var s = Double(data[0].deceased ?? 0)
+    
     for (i, el) in data.enumerated() {
-        guard let positive = el.tests.positive.today else {
-            continue
+        if i % 7 == 0 {
+            cases.append(ChartDataEntry(x: Double(i), y: s / 7))
+            s = 0
+        } else {
+            s += Double(el.deceased ?? 0)
         }
-        guard let performed = el.tests.performed.today else {
-            continue
-        }
-        cases.append(ChartDataEntry(x: Double(i), y: Double(positive) / Double(performed)))
+    
     }
 
-    let casesSet = LineChartDataSet(entries: cases)
-    casesSet.label = "Delež pozitivnih testov"
+    let deathsSet = LineChartDataSet(entries: cases)
+    deathsSet.label = "Umrlih na dan (7-dnevno povprečje)"
   
-    casesSet.mode = .cubicBezier
+    deathsSet.mode = .cubicBezier
+    deathsSet.drawValuesEnabled = false
     
-    
-    casesSet.lineWidth = 2
-    casesSet.drawCirclesEnabled = false
-    casesSet.setColor(.systemPink)
+    deathsSet.lineWidth = 2
+    deathsSet.drawCirclesEnabled = false
+    deathsSet.setColor(.systemRed)
 
-    casesSet.fillColor = .systemPink
-    casesSet.fillAlpha = 0.5
-    casesSet.drawFilledEnabled = true;
-    casesSet.drawHorizontalHighlightIndicatorEnabled = false
+    deathsSet.fillColor = .systemRed
+    deathsSet.fillAlpha = 0.6
+    deathsSet.drawFilledEnabled = true;
+    deathsSet.drawHorizontalHighlightIndicatorEnabled = false
 
-
-    return [casesSet]
+    return [deathsSet]
 
 
 }
 
-public func getCasesData(completion: @escaping (Chart) -> ()) {
+public func getDeathsData(completion: @escaping (Chart) -> ()) {
 
     URLSession.shared.dataTask(with: URL(string: "https://api.sledilnik.org/api/stats/")!, completionHandler: { (data, response, error) in
         guard let data = data, error == nil else {
@@ -77,36 +79,10 @@ public func getCasesData(completion: @escaping (Chart) -> ()) {
 }
 
 
-
-struct Stats: Codable {
+private struct Stats: Codable {
     let year: Int
     let month: Int
     let day: Int
     
-    let tests: Tests
-//    let vaccination: Vaccination
-    
-    struct Tests: Codable {
-        let performed: Performed
-        let positive: Positive
-    }
-    
-    struct Performed: Codable {
-        let today: Int?
-        let toDate: Int?
-    }
-
-    struct Positive: Codable {
-        let today: Int?
-        let toDate: Int?
-    }
-    
-//    struct Vaccination: Codable {
-//        let used: Used
-//    }
-//
-//    struct Used: Codable {
-//        let toDate: Int?
-//    }
-//
+    let deceased: Int?
 }

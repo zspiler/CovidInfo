@@ -62,9 +62,7 @@ class BarChartCell: UITableViewCell {
         barChart.drawGridBackgroundEnabled = false
         barChart.xAxis.drawAxisLineEnabled = false
         barChart.xAxis.drawGridLinesEnabled = false
-
-        
-        
+    
     }
     
 }

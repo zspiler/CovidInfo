@@ -10,19 +10,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="486" id="KGk-i7-Jjw" customClass="BarChartCell" customModule="CovidInfo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="454" height="486"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="487" id="KGk-i7-Jjw" customClass="BarChartCell" customModule="CovidInfo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="454" height="487"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="454" height="486"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="454" height="487"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arG-rF-mm6" userLabel="ChartContainerView">
-                        <rect key="frame" x="0.0" y="89" width="453" height="405"/>
+                        <rect key="frame" x="0.0" y="89" width="453" height="398"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="453" id="Z2Z-qI-CDR"/>
-                            <constraint firstAttribute="height" constant="405" id="lzR-DA-elt"/>
+                            <constraint firstAttribute="height" constant="398" id="lzR-DA-elt"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCT-S6-TBU">
@@ -46,7 +46,7 @@
                 <outlet property="chartContainerView" destination="arG-rF-mm6" id="57e-Mm-Kab"/>
                 <outlet property="chartTitle" destination="YCT-S6-TBU" id="Gls-wT-EuC"/>
             </connections>
-            <point key="canvasLocation" x="-23.188405797101453" y="243.08035714285714"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="243.41517857142856"/>
         </tableViewCell>
     </objects>
     <resources>
