@@ -1,21 +1,24 @@
 import Foundation
-
-import Foundation
 import Charts
 
+private let title = "Poraba cepiv"
 
 private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     
     // MODERNA used
     var usedModerna = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
+        // display every 5th data
+        if (i % 10 != 0) {
+            continue
+        }
         usedModerna.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.moderna ?? 0)))
     }
 
     let mdrnSet = LineChartDataSet(entries: usedModerna)
-    mdrnSet.label = "used Moderna"
+    mdrnSet.label = "Moderna"
     mdrnSet.mode = .cubicBezier
-    mdrnSet.cubicIntensity = 1
+
     mdrnSet.lineWidth = 2
     mdrnSet.drawCirclesEnabled = false
     mdrnSet.setColor(.systemGreen)
@@ -29,13 +32,16 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     // AZ used
     var usedAz = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
+        // display every 5th data
+        if (i % 10 != 0) {
+            continue
+        }
         usedAz.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.az ?? 0)))
     }
 
     let azSet = LineChartDataSet(entries: usedAz)
-    azSet.label = "used AstraZeneca"
+    azSet.label = "AstraZeneca"
     azSet.mode = .cubicBezier
-    azSet.cubicIntensity = 1
     azSet.lineWidth = 2
     azSet.drawCirclesEnabled = false
     azSet.setColor(.systemRed)
@@ -48,13 +54,16 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     // Pfizer used
     var usedPfizer = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
+        // display every 5th data
+        if (i % 10 != 0) {
+            continue
+        }
         usedPfizer.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.pfizer ?? 0)))
     }
 
     let pfizerSet = LineChartDataSet(entries: usedPfizer)
-    pfizerSet.label = "used Pfizer"
+    pfizerSet.label = "Pfizer"
     pfizerSet.mode = .cubicBezier
-    pfizerSet.cubicIntensity = 1
     pfizerSet.lineWidth = 2
     pfizerSet.drawCirclesEnabled = false
     pfizerSet.setColor(.systemBlue)
@@ -68,13 +77,16 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     // Janssen used
     var usedJanssen = [ChartDataEntry]()
     for (i, el) in data.enumerated() {
+        // display every 5th data
+        if (i % 10 != 0) {
+            continue
+        }
         usedJanssen.append(ChartDataEntry(x: Double(i), y: Double(el.usedByManufacturer.janssen ?? 0)))
     }
 
     let janssenSet = LineChartDataSet(entries: usedJanssen)
-    janssenSet.label = "used Janssen"
+    janssenSet.label = "Janssen"
     janssenSet.mode = .cubicBezier
-    janssenSet.cubicIntensity = 1
     janssenSet.lineWidth = 2
     janssenSet.drawCirclesEnabled = false
     janssenSet.setColor(.systemTeal)
@@ -83,8 +95,6 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     janssenSet.fillAlpha = 0.0
     janssenSet.drawFilledEnabled = true;
     janssenSet.drawHorizontalHighlightIndicatorEnabled = false
-    
-    
     
     return [mdrnSet, azSet, pfizerSet, janssenSet]
 
@@ -95,7 +105,7 @@ public func getVaccinationsData(completion: @escaping (Chart) -> ()) {
 
     URLSession.shared.dataTask(with: URL(string: "https://api.sledilnik.org/api/vaccinations/")!, completionHandler: { (data, response, error) in
         guard let data = data, error == nil else {
-            // TODO - display error
+            // TODO: display error
             return
         }
 
@@ -111,9 +121,10 @@ public func getVaccinationsData(completion: @escaping (Chart) -> ()) {
             
             DispatchQueue.main.async {
                 completion(
-                    Chart(title: "Cepljenje",
+                    Chart(title: title,
                           datasets: createDatasets(data: res),
-                          dates: dates
+                          dates: dates,
+                          type: ChartType.Line
                     )
                 )
             }

@@ -1,7 +1,7 @@
 import UIKit
 import Charts
 
-class TableViewCell: UITableViewCell {
+class LineChartCell: UITableViewCell {
 
     @IBOutlet var chartTitle: UILabel!
     @IBOutlet var chartContainerView: UIView!
@@ -13,14 +13,11 @@ class TableViewCell: UITableViewCell {
         chartContainerView.addSubview(lineChart)
     }
     
-    
-    
-    static let identifier = "TableViewCell"
+    static let identifier = "LineChartCell"
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         selectionStyle = .none
@@ -28,26 +25,22 @@ class TableViewCell: UITableViewCell {
     }
     
     func configure(with chart: Chart) {
-        
+    
+        lineChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
         chartTitle.text = chart.title
         
-        lineChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
         lineChart.data = LineChartData(dataSets: chart.datasets)
         
         lineChart.isUserInteractionEnabled = false
         
         lineChart.backgroundColor = UIColor(red: 0.9569, green: 0.9451, blue: 0.8706, alpha: 1.0)
+        lineChart.legend.textColor = .black
         
-        
-        //        lineChart.animate(xAxisDuration: 1.5)
         lineChart.rightAxis.enabled = false
         lineChart.xAxis.setLabelCount(6, force: true)
-//        lineChart.xAxis.labelTextColor = .white
         lineChart.xAxis.labelTextColor = .black
 
         lineChart.leftAxis.setLabelCount(6, force: false)
-//        lineChart.leftAxis.labelTextColor = .white
-//        lineChart.leftAxis.axisLineColor = .white
         lineChart.leftAxis.labelTextColor = .black
         lineChart.leftAxis.axisLineColor = .black
         lineChart.leftAxis.labelPosition = .outsideChart
@@ -64,9 +57,22 @@ class TableViewCell: UITableViewCell {
         
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: chart.dates.map { dateFormatter.string(from: $0) })
         lineChart.xAxis.setLabelCount(6, force: false)
-      
-        lineChart.legend.textColor = .black
-        
+//        }
+
+//
+//        if (chart.type == ChartType.Bar) {
+//            lineChart = BarChartView()
+//            lineChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
+//            chartTitle.text = chart.title
+//            let data = BarChartData(dataSet: chart.datasets[0])
+//
+//            data.setDrawValues(true)
+//            data.setValueTextColor(.white)
+//
+//            lineChart.data = data
+//
+//        }
+//
     }
     
 }

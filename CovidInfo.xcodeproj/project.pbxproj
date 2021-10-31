@@ -18,8 +18,10 @@
 		379C90662725A5FA009594E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379C90642725A5FA009594E2 /* Main.storyboard */; };
 		379C90682725A5FC009594E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379C90672725A5FC009594E2 /* Assets.xcassets */; };
 		379C906B2725A5FC009594E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379C90692725A5FC009594E2 /* LaunchScreen.storyboard */; };
-		37C035122729C19700F156E0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C035102729C19700F156E0 /* TableViewCell.swift */; };
-		37C035132729C19700F156E0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C035112729C19700F156E0 /* TableViewCell.xib */; };
+		37C035122729C19700F156E0 /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C035102729C19700F156E0 /* LineChartCell.swift */; };
+		37C035132729C19700F156E0 /* LineChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C035112729C19700F156E0 /* LineChartCell.xib */; };
+		37F51797272EA32700FD545F /* Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F51796272EA32700FD545F /* Cases.swift */; };
+		37F51799272ED3DB00FD545F /* VaccinePopularity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F51798272ED3DB00FD545F /* VaccinePopularity.swift */; };
 		547F11606635BC07DE056B3C /* Pods_CovidInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C757182EFB7A461E50D92208 /* Pods_CovidInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +39,10 @@
 		379C90672725A5FC009594E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		379C906A2725A5FC009594E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		379C906C2725A5FC009594E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37C035102729C19700F156E0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		37C035112729C19700F156E0 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		37C035102729C19700F156E0 /* LineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
+		37C035112729C19700F156E0 /* LineChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartCell.xib; sourceTree = "<group>"; };
+		37F51796272EA32700FD545F /* Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cases.swift; sourceTree = "<group>"; };
+		37F51798272ED3DB00FD545F /* VaccinePopularity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinePopularity.swift; sourceTree = "<group>"; };
 		B450ADC57F837D691E780177 /* Pods-CovidInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidInfo.release.xcconfig"; path = "Target Support Files/Pods-CovidInfo/Pods-CovidInfo.release.xcconfig"; sourceTree = "<group>"; };
 		C757182EFB7A461E50D92208 /* Pods_CovidInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B111808C47D0B6C3190B96 /* Pods-CovidInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidInfo.debug.xcconfig"; path = "Target Support Files/Pods-CovidInfo/Pods-CovidInfo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,12 +89,14 @@
 				379C90692725A5FC009594E2 /* LaunchScreen.storyboard */,
 				379C906C2725A5FC009594E2 /* Info.plist */,
 				378618162725AA9A00892A1A /* PreferencesViewController.swift */,
-				37C035102729C19700F156E0 /* TableViewCell.swift */,
-				37C035112729C19700F156E0 /* TableViewCell.xib */,
+				37C035102729C19700F156E0 /* LineChartCell.swift */,
+				37C035112729C19700F156E0 /* LineChartCell.xib */,
 				370CA89B272A9977005FA9E8 /* Hospitalizations.swift */,
 				37269A0C272B38E600F02664 /* Vaccinations.swift */,
 				37269A0F272B39D200F02664 /* Helpers.swift */,
 				37269A12272B3AD500F02664 /* Chart.swift */,
+				37F51796272EA32700FD545F /* Cases.swift */,
+				37F51798272ED3DB00FD545F /* VaccinePopularity.swift */,
 			);
 			path = CovidInfo;
 			sourceTree = "<group>";
@@ -172,7 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379C906B2725A5FC009594E2 /* LaunchScreen.storyboard in Resources */,
-				37C035132729C19700F156E0 /* TableViewCell.xib in Resources */,
+				37C035132729C19700F156E0 /* LineChartCell.xib in Resources */,
 				379C90682725A5FC009594E2 /* Assets.xcassets in Resources */,
 				379C90662725A5FA009594E2 /* Main.storyboard in Resources */,
 			);
@@ -230,10 +236,12 @@
 				378618172725AA9A00892A1A /* PreferencesViewController.swift in Sources */,
 				37269A0D272B38E600F02664 /* Vaccinations.swift in Sources */,
 				379C90632725A5FA009594E2 /* ViewController.swift in Sources */,
+				37F51797272EA32700FD545F /* Cases.swift in Sources */,
 				37269A10272B39D200F02664 /* Helpers.swift in Sources */,
-				37C035122729C19700F156E0 /* TableViewCell.swift in Sources */,
+				37C035122729C19700F156E0 /* LineChartCell.swift in Sources */,
 				37269A13272B3AD500F02664 /* Chart.swift in Sources */,
 				370CA89C272A9977005FA9E8 /* Hospitalizations.swift in Sources */,
+				37F51799272ED3DB00FD545F /* VaccinePopularity.swift in Sources */,
 				379C905F2725A5FA009594E2 /* AppDelegate.swift in Sources */,
 				379C90612725A5FA009594E2 /* SceneDelegate.swift in Sources */,
 			);

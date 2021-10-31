@@ -1,7 +1,7 @@
-
 import Foundation
 import Charts
 
+private let title = "Hospitalizacije"
 
 private func createDatasets(data: [HospitalData]) -> [IChartDataSet] {
     // 'Hospitalizirani' data
@@ -47,6 +47,7 @@ private func createDatasets(data: [HospitalData]) -> [IChartDataSet] {
     return [hospSet, icuSet]
 }
 
+
 public func getHospitalizationData(completion: @escaping (Chart) -> ()) {
 
     URLSession.shared.dataTask(with: URL(string: "https://api.sledilnik.org/api/hospitals/")!, completionHandler: { (data, response, error) in
@@ -67,9 +68,10 @@ public func getHospitalizationData(completion: @escaping (Chart) -> ()) {
             
             DispatchQueue.main.async {
                 completion(
-                    Chart(title: "Hospitalizacije",
+                    Chart(title: title,
                           datasets: createDatasets(data: res),
-                          dates: dates
+                          dates: dates,
+                          type: ChartType.Line
                     )
                 )
             }
@@ -100,5 +102,4 @@ struct HospitalData: Codable {
         let occupied: Int
         let free: Int
     }
-
 }
