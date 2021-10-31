@@ -9,17 +9,19 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     let latestData = data[data.count-1]
     
     let entries: [BarChartDataEntry] = [
-        BarChartDataEntry(x: Double(0), y: Double(latestData.usedByManufacturer.moderna!)),
-        BarChartDataEntry(x: Double(1), y: Double(latestData.usedByManufacturer.pfizer!)),
-        BarChartDataEntry(x: Double(2), y: Double(latestData.usedByManufacturer.az!)),
+        BarChartDataEntry(x: Double(0), y: Double(latestData.usedByManufacturer.pfizer!)),
+        BarChartDataEntry(x: Double(1), y: Double(latestData.usedByManufacturer.az!)),
+        BarChartDataEntry(x: Double(2), y: Double(latestData.usedByManufacturer.moderna!)),
         BarChartDataEntry(x: Double(3), y: Double(latestData.usedByManufacturer.janssen!))
     ]
     
-    let set =  BarChartDataSet(entries: entries)
-    set.setColor(.red)
-    set.highlightColor = .blue
-    set.highlightAlpha = 1
+    // Sorting not working?
+    // entries = entries.sorted { $0.y < $1.y }
+    // set.sort(by: { $0.y < $1.y })
     
+    let set = BarChartDataSet(entries: entries)
+    set.colors = ChartColorTemplates.pastel()
+    set.highlightAlpha = 0.6
     
     return [set]
     
@@ -36,13 +38,15 @@ public func getVaccinePopularityData(completion: @escaping (Chart) -> ()) {
         do {
             // decode fetched data
             let res = try JSONDecoder().decode([Vaccination].self, from: data)
+       
             
             DispatchQueue.main.async {
                 completion(
                     Chart(title: title,
+                          type: ChartType.Bar,
                           datasets: createDatasets(data: res),
                           dates: [],
-                          type: ChartType.Bar
+                          labels: ["Pfizer", "AstraZeneca", "Moderna", "Janssen"]
                     )
                 )
             }

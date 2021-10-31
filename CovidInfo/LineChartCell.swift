@@ -57,22 +57,6 @@ class LineChartCell: UITableViewCell {
         
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: chart.dates.map { dateFormatter.string(from: $0) })
         lineChart.xAxis.setLabelCount(6, force: false)
-//        }
-
-//
-//        if (chart.type == ChartType.Bar) {
-//            lineChart = BarChartView()
-//            lineChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
-//            chartTitle.text = chart.title
-//            let data = BarChartData(dataSet: chart.datasets[0])
-//
-//            data.setDrawValues(true)
-//            data.setValueTextColor(.white)
-//
-//            lineChart.data = data
-//
-//        }
-//
     }
     
 }

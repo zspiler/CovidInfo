@@ -12,11 +12,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         
         table.register(LineChartCell.nib(), forCellReuseIdentifier: LineChartCell.identifier)
+        table.register(BarChartCell.nib(), forCellReuseIdentifier: BarChartCell.identifier)
+
         table.delegate = self
         table.dataSource = self
-        
     
-        let placeholderChart = Chart(title: "", datasets: [], dates: [], type: ChartType.Line)
+        let placeholderChart = Chart(title: "", type: ChartType.Line, datasets: [], dates: [], labels:[])
         
         // TODO: display loading animtion in placeholders
         self.charts = [placeholderChart, placeholderChart, placeholderChart, placeholderChart]
@@ -38,11 +39,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.table.reloadData()
         }
 
-//        getVaccinePopularityData() { (data) in
-//            self.charts[3] = data
-//            self.charts[3].type = ChartType.Bar
-//            self.table.reloadData()
-//        }
+        getVaccinePopularityData() { (data) in
+            self.charts[3] = data
+            self.charts[3].type = ChartType.Bar
+            self.table.reloadData()
+        }
 
     }
     
@@ -57,11 +58,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: LineChartCell.identifier, for: indexPath) as! LineChartCell
-        
-        cell.configure(with: charts[indexPath.row])
-        
-        return cell
+        if (charts[indexPath.row].type == ChartType.Line) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LineChartCell.identifier, for: indexPath) as! LineChartCell
+            cell.configure(with: charts[indexPath.row])
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: BarChartCell.identifier, for: indexPath) as! BarChartCell
+            cell.configure(with: charts[indexPath.row])
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

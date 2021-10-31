@@ -69,9 +69,11 @@ public func getHospitalizationData(completion: @escaping (Chart) -> ()) {
             DispatchQueue.main.async {
                 completion(
                     Chart(title: title,
+                          type: ChartType.Line,
                           datasets: createDatasets(data: res),
                           dates: dates,
-                          type: ChartType.Line
+                          labels: []
+                          
                     )
                 )
             }
