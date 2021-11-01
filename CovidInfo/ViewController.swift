@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let placeholder = Chart(title: "", type: ChartType.Line, datasets: [], dates: [], labels:[])
         
         // TODO: display loading animtion in placeholders
-        self.charts = [placeholder, placeholder, placeholder, placeholder, placeholder]
+        self.charts = [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder]
         
         
         // Display charts
@@ -49,6 +49,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.charts[4] = data
             self.table.reloadData()
         }
+        
+        getVaccinationsByAgeData() { (data) in
+            self.charts[5] = data
+            self.charts[5].type = ChartType.Bar
+            self.table.reloadData()
+        }
+        
+        getRegionsData() { (data) in
+            self.charts[6] = data
+            self.table.reloadData()
+        }
+        
 
     }
     

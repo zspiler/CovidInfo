@@ -60,17 +60,10 @@ public func getVaccinePopularityData(completion: @escaping (Chart) -> ()) {
 }
 
 private struct Vaccination: Codable {
-    let year: Int
-    let month: Int
-    let day: Int
-    
     let administered: Administered
     let administered2nd: Administered
     let administered3rd: Administered
 
-    let usedToDate: Int?
-    let deliveredToDate: Int
-    
     let usedByManufacturer: Manufacturer
     
     struct Administered: Codable {

@@ -6,7 +6,7 @@ class BarChartCell: UITableViewCell {
     @IBOutlet var chartTitle: UILabel!
     @IBOutlet var chartContainerView: UIView!
 
-    let barChart = BarChartView()
+    let barChart = HorizontalBarChartView()
     
     override func awakeFromNib() {
         super.awakeFromNib()

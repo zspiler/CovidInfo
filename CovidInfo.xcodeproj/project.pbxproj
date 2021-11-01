@@ -21,6 +21,8 @@
 		379C906B2725A5FC009594E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379C90692725A5FC009594E2 /* LaunchScreen.storyboard */; };
 		37C035122729C19700F156E0 /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C035102729C19700F156E0 /* LineChartCell.swift */; };
 		37C035132729C19700F156E0 /* LineChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C035112729C19700F156E0 /* LineChartCell.xib */; };
+		37CB8EAC27305B4E00E62215 /* VaccinatonsByAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB8EAB27305B4E00E62215 /* VaccinatonsByAge.swift */; };
+		37CB8EAE27306A6600E62215 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB8EAD27306A6600E62215 /* Regions.swift */; };
 		37F51797272EA32700FD545F /* Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F51796272EA32700FD545F /* Cases.swift */; };
 		37F51799272ED3DB00FD545F /* VaccinePopularity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F51798272ED3DB00FD545F /* VaccinePopularity.swift */; };
 		37F5179B272EE69B00FD545F /* BarChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5179A272EE69B00FD545F /* BarChartCell.xib */; };
@@ -45,6 +47,8 @@
 		379C906C2725A5FC009594E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C035102729C19700F156E0 /* LineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
 		37C035112729C19700F156E0 /* LineChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartCell.xib; sourceTree = "<group>"; };
+		37CB8EAB27305B4E00E62215 /* VaccinatonsByAge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatonsByAge.swift; sourceTree = "<group>"; };
+		37CB8EAD27306A6600E62215 /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		37F51796272EA32700FD545F /* Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cases.swift; sourceTree = "<group>"; };
 		37F51798272ED3DB00FD545F /* VaccinePopularity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinePopularity.swift; sourceTree = "<group>"; };
 		37F5179A272EE69B00FD545F /* BarChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartCell.xib; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				37F51796272EA32700FD545F /* Cases.swift */,
 				37F51798272ED3DB00FD545F /* VaccinePopularity.swift */,
 				3761632A272EFFBC00B06C7D /* Deaths.swift */,
+				37CB8EAB27305B4E00E62215 /* VaccinatonsByAge.swift */,
+				37CB8EAD27306A6600E62215 /* Regions.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -253,10 +259,12 @@
 			files = (
 				378618172725AA9A00892A1A /* PreferencesViewController.swift in Sources */,
 				37269A0D272B38E600F02664 /* Vaccinations.swift in Sources */,
+				37CB8EAC27305B4E00E62215 /* VaccinatonsByAge.swift in Sources */,
 				379C90632725A5FA009594E2 /* ViewController.swift in Sources */,
 				37F51797272EA32700FD545F /* Cases.swift in Sources */,
 				37F5179D272EE6A500FD545F /* BarChartCell.swift in Sources */,
 				37269A10272B39D200F02664 /* Helpers.swift in Sources */,
+				37CB8EAE27306A6600E62215 /* Regions.swift in Sources */,
 				37C035122729C19700F156E0 /* LineChartCell.swift in Sources */,
 				37269A13272B3AD500F02664 /* Chart.swift in Sources */,
 				370CA89C272A9977005FA9E8 /* Hospitalizations.swift in Sources */,
