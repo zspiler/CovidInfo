@@ -39,10 +39,13 @@ class BarChartCell: UITableViewCell {
         barChart.isUserInteractionEnabled = false
         barChart.backgroundColor = UIColor(red: 0.9569, green: 0.9451, blue: 0.8706, alpha: 1.0)
         
+        barChart.backgroundColor = UIColor(red: 0.118, green: 0.153, blue: 0.271, alpha: 1.0)
+        
+        
         barChart.rightAxis.enabled = false
         
         // X axis
-        barChart.xAxis.labelTextColor = .black
+        barChart.xAxis.labelTextColor = .white
         barChart.xAxis.labelPosition = .bottom
         
         
@@ -54,8 +57,8 @@ class BarChartCell: UITableViewCell {
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: chart.labels)
         
         barChart.leftAxis.setLabelCount(6, force: false)
-        barChart.leftAxis.labelTextColor = .black
-        barChart.leftAxis.axisLineColor = .black
+        barChart.leftAxis.labelTextColor = .white
+        barChart.leftAxis.axisLineColor = .white
         barChart.leftAxis.labelPosition = .outsideChart
                 
         

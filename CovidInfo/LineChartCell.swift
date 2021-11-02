@@ -33,16 +33,18 @@ class LineChartCell: UITableViewCell {
         
         lineChart.isUserInteractionEnabled = false
         
-        lineChart.backgroundColor = UIColor(red: 0.9569, green: 0.9451, blue: 0.8706, alpha: 1.0)
-        lineChart.legend.textColor = .black
+        
+        lineChart.backgroundColor = UIColor(red: 0.118, green: 0.153, blue: 0.271, alpha: 1.0)
+        
+        lineChart.legend.textColor = .white
         
         lineChart.rightAxis.enabled = false
         lineChart.xAxis.setLabelCount(6, force: true)
-        lineChart.xAxis.labelTextColor = .black
+        lineChart.xAxis.labelTextColor = .white
 
         lineChart.leftAxis.setLabelCount(6, force: false)
-        lineChart.leftAxis.labelTextColor = .black
-        lineChart.leftAxis.axisLineColor = .black
+        lineChart.leftAxis.labelTextColor = .white
+        lineChart.leftAxis.axisLineColor = .white
         lineChart.leftAxis.labelPosition = .outsideChart
                 
         // X-axis

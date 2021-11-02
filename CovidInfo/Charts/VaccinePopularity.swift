@@ -20,7 +20,7 @@ private func createDatasets(data: [Vaccination]) -> [IChartDataSet] {
     // set.sort(by: { $0.y < $1.y })
     
     let set = BarChartDataSet(entries: entries)
-    set.colors = ChartColorTemplates.material()
+    set.colors = ChartColorTemplates.joyful()
     
     set.highlightAlpha = 0.2
     
