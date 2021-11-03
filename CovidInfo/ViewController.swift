@@ -1,7 +1,6 @@
 import UIKit
 import Charts
 
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var table: UITableView!
@@ -41,7 +40,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // placeholder used to maintain chart order
         self.charts = [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder]
 
-        // Display charts
+        
+        // Load charts
         getCasesData() { (data) in
             self.charts[0] = data
             self.table.reloadData()
@@ -113,7 +113,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: LineChartCell.identifier, for: indexPath) as! LineChartCell
             cell.configure(with: charts[indexPath.row])
             
-        
             // Hide cell according to user settings
             if (hidden[indexPath.row]) {
                 cell.isHidden = true

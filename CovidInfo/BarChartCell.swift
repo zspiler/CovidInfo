@@ -26,7 +26,7 @@ class BarChartCell: UITableViewCell {
     
     func configure(with chart: Chart) {
                 
-        barChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
+        barChart.frame = CGRect(x: 0, y: 0, width: 380, height: 400)
         chartTitle.text = chart.title
         
         let data = BarChartData(dataSet: chart.datasets[0])

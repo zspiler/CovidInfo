@@ -26,7 +26,7 @@ class LineChartCell: UITableViewCell {
     
     func configure(with chart: Chart) {
     
-        lineChart.frame = CGRect(x: 0, y: 0, width: 375, height: 400)
+        lineChart.frame = CGRect(x: 0, y: 0, width: 380, height: 400)
         chartTitle.text = chart.title
         
         lineChart.data = LineChartData(dataSets: chart.datasets)

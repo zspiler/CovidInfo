@@ -11,7 +11,6 @@ private func createDatasets(data: [HospitalData]) -> [IChartDataSet] {
         hospiralizedData.append(ChartDataEntry(x: Double(i), y: hospitalized))
     }
     
-    
     let hospSet = LineChartDataSet(entries: hospiralizedData)
     hospSet.label = "Hospitalizirani"
     hospSet.mode = .cubicBezier

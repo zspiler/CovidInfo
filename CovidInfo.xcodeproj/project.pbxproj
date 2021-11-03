@@ -107,6 +107,10 @@
 			children = (
 				37616329272EFF7800B06C7D /* Charts */,
 				379C905E2725A5FA009594E2 /* AppDelegate.swift */,
+				37C035102729C19700F156E0 /* LineChartCell.swift */,
+				37F5179C272EE6A500FD545F /* BarChartCell.swift */,
+				37C035112729C19700F156E0 /* LineChartCell.xib */,
+				37F5179A272EE69B00FD545F /* BarChartCell.xib */,
 				379C90602725A5FA009594E2 /* SceneDelegate.swift */,
 				379C90622725A5FA009594E2 /* ViewController.swift */,
 				379C90642725A5FA009594E2 /* Main.storyboard */,
@@ -114,10 +118,6 @@
 				379C90692725A5FC009594E2 /* LaunchScreen.storyboard */,
 				379C906C2725A5FC009594E2 /* Info.plist */,
 				378618162725AA9A00892A1A /* PreferencesViewController.swift */,
-				37C035102729C19700F156E0 /* LineChartCell.swift */,
-				37F5179C272EE6A500FD545F /* BarChartCell.swift */,
-				37C035112729C19700F156E0 /* LineChartCell.xib */,
-				37F5179A272EE69B00FD545F /* BarChartCell.xib */,
 				37269A0F272B39D200F02664 /* Helpers.swift */,
 				37269A12272B3AD500F02664 /* Chart.swift */,
 			);
