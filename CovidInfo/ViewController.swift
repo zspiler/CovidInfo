@@ -2,6 +2,8 @@ import UIKit
 import Charts
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
     @IBOutlet var table: UITableView!
 
@@ -23,11 +25,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.reloadData()
     }
     
+    func addLoadingAnimation() {
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        self.view.backgroundColor = UIColor(red: 0.07, green: 0.11, blue: 0.20, alpha: 1.00)
         
+        addLoadingAnimation()
         checkUserPreferences()
-        
+
         table.register(LineChartCell.nib(), forCellReuseIdentifier: LineChartCell.identifier)
         table.register(BarChartCell.nib(), forCellReuseIdentifier: BarChartCell.identifier)
 
@@ -40,43 +53,72 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // placeholder used to maintain chart order
         self.charts = [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder]
 
+        var loadedCharts = 0
         
         // Load charts
         getCasesData() { (data) in
             self.charts[0] = data
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
         getHospitalizationData() { (data) in
             self.charts[1] = data
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
         getVaccinationsData() { (data) in
             self.charts[2] = data
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
         getVaccinePopularityData() { (data) in
             self.charts[3] = data
             self.charts[3].type = ChartType.Bar
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
         getDeathsData() { (data) in
             self.charts[4] = data
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
         getVaccinationsByAgeData() { (data) in
             self.charts[5] = data
             self.charts[5].type = ChartType.Bar
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
         getRegionsData() { (data) in
             self.charts[6] = data
             self.table.reloadData()
+            loadedCharts += 1
+            if loadedCharts == self.charts.count {
+                self.activityIndicator.stopAnimating()
+            }
         }
 
             

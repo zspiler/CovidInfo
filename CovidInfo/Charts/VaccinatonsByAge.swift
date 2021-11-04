@@ -39,7 +39,7 @@ public func getVaccinationsByAgeData(completion: @escaping (Chart) -> ()) {
             
             for group in res[res.count-1].administeredPerAge {
                 if group.ageTo != nil {
-                    labels.append("\(group.ageFrom)-\(group.ageTo! ?? 0)")
+                    labels.append("\(group.ageFrom)-\(group.ageTo!)")
                 } else {
                     labels.append("\(group.ageFrom)+")
                 }
