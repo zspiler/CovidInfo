@@ -58,10 +58,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         hidden[0] = userDefaults.bool(forKey: CASES_SWITCH_KEY) ? false : true
         hidden[1] = userDefaults.bool(forKey: HOSP_SWITCH_KEY) ? false : true
         hidden[2] = userDefaults.bool(forKey: VACC_SWITCH_KEY) ? false : true
-        hidden[3] = userDefaults.bool(forKey: DEATHS_SWITCH_KEY) ? false : true
-        hidden[4] = userDefaults.bool(forKey: REGIONS_SWITCH_KEY) ? false : true
+        hidden[3] = userDefaults.bool(forKey: VACCPOPULARITY_SWITCH_KEY) ? false : true
+        hidden[4] = userDefaults.bool(forKey: DEATHS_SWITCH_KEY) ? false : true
         hidden[5] = userDefaults.bool(forKey: VACCBYAGE_SWITCH_KEY) ? false : true
-        hidden[6] = userDefaults.bool(forKey: VACCPOPULARITY_SWITCH_KEY) ? false : true
+        hidden[6] = userDefaults.bool(forKey: REGIONS_SWITCH_KEY) ? false : true
     }
     
     override func viewDidLoad() {
