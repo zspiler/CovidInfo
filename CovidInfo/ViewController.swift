@@ -29,9 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         activityIndicator.center = self.view.center
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

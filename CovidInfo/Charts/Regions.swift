@@ -1,7 +1,7 @@
 import Foundation
 import Charts
 
-private let title = "Po regijah"
+private let title = "Aktivni primeri po regijah"
 
 private func createDatasets(data: [RegionsData]) -> [IChartDataSet] {
     

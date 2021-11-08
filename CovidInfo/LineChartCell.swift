@@ -38,6 +38,7 @@ class LineChartCell: UITableViewCell {
         
         lineChart.legend.textColor = .white
         
+        
         lineChart.rightAxis.enabled = false
         lineChart.xAxis.setLabelCount(6, force: true)
         lineChart.xAxis.labelTextColor = .white
@@ -46,7 +47,10 @@ class LineChartCell: UITableViewCell {
         lineChart.leftAxis.labelTextColor = .white
         lineChart.leftAxis.axisLineColor = .white
         lineChart.leftAxis.labelPosition = .outsideChart
-                
+        
+  
+//        linechart.leftAxis.valueFormatter = [MyCustomNumberFormatter new];
+
         // X-axis
         lineChart.xAxis.labelPosition = .bottom
         lineChart.xAxis.drawLabelsEnabled = true

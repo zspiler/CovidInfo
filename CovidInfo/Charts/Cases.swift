@@ -16,11 +16,11 @@ private func createDatasets(data: [Stats]) -> [IChartDataSet] {
         guard let performed = el.tests.performed.today else {
             continue
         }
-        cases.append(ChartDataEntry(x: Double(i), y: Double(positive) / Double(performed)))
+        cases.append(ChartDataEntry(x: Double(i), y: (Double(positive) / Double(performed)) * 100))
     }
 
     let casesSet = LineChartDataSet(entries: cases)
-    casesSet.label = "Delež pozitivnih testov"
+    casesSet.label = "Delež pozitivnih testov (%)"
   
     casesSet.mode = .cubicBezier
     
