@@ -23,6 +23,7 @@
 		37C035132729C19700F156E0 /* LineChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C035112729C19700F156E0 /* LineChartCell.xib */; };
 		37CB8EAC27305B4E00E62215 /* VaccinatonsByAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB8EAB27305B4E00E62215 /* VaccinatonsByAge.swift */; };
 		37CB8EAE27306A6600E62215 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB8EAD27306A6600E62215 /* Regions.swift */; };
+		37ED9781273967130043125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED9780273967130043125D /* Constants.swift */; };
 		37F51797272EA32700FD545F /* Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F51796272EA32700FD545F /* Cases.swift */; };
 		37F51799272ED3DB00FD545F /* VaccinePopularity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F51798272ED3DB00FD545F /* VaccinePopularity.swift */; };
 		37F5179B272EE69B00FD545F /* BarChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5179A272EE69B00FD545F /* BarChartCell.xib */; };
@@ -49,6 +50,7 @@
 		37C035112729C19700F156E0 /* LineChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartCell.xib; sourceTree = "<group>"; };
 		37CB8EAB27305B4E00E62215 /* VaccinatonsByAge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatonsByAge.swift; sourceTree = "<group>"; };
 		37CB8EAD27306A6600E62215 /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		37ED9780273967130043125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		37F51796272EA32700FD545F /* Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cases.swift; sourceTree = "<group>"; };
 		37F51798272ED3DB00FD545F /* VaccinePopularity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinePopularity.swift; sourceTree = "<group>"; };
 		37F5179A272EE69B00FD545F /* BarChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartCell.xib; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				378618162725AA9A00892A1A /* PreferencesViewController.swift */,
 				37269A0F272B39D200F02664 /* Helpers.swift */,
 				37269A12272B3AD500F02664 /* Chart.swift */,
+				37ED9780273967130043125D /* Constants.swift */,
 			);
 			path = CovidInfo;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				37F51797272EA32700FD545F /* Cases.swift in Sources */,
 				37F5179D272EE6A500FD545F /* BarChartCell.swift in Sources */,
 				37269A10272B39D200F02664 /* Helpers.swift in Sources */,
+				37ED9781273967130043125D /* Constants.swift in Sources */,
 				37CB8EAE27306A6600E62215 /* Regions.swift in Sources */,
 				37C035122729C19700F156E0 /* LineChartCell.swift in Sources */,
 				37269A13272B3AD500F02664 /* Chart.swift in Sources */,
@@ -421,7 +425,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DYF8474YJX;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = CovidInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,7 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DYF8474YJX;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = CovidInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

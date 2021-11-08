@@ -1,6 +1,7 @@
 import UIKit
 import Charts
 
+
 class PreferencesViewController: UIViewController {
     
     @IBOutlet weak var casesSwitch: UISwitch!
@@ -13,15 +14,6 @@ class PreferencesViewController: UIViewController {
 
     
     let userDefaults = UserDefaults.standard
-    
-    let CASES_SWITCH_KEY = "cases"
-    let HOSP_SWITCH_KEY = "hospitalizations"
-    let VACC_SWITCH_KEY = "vaccinations"
-    let DEATHS_SWITCH_KEY = "deaths"
-    let REGIONS_SWITCH_KEY = "regions"
-    let VACCBYAGE_SWITCH_KEY = "vaccinationsByAge"
-    let VACCPOPULARITY_SWITCH_KEY = "vaccinePopularity"
-    
     
     @IBAction func hospSwitchChanged(_ sender: Any) {
         if (hospSwitch.isOn) {
@@ -80,14 +72,41 @@ class PreferencesViewController: UIViewController {
         }
     }
   
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkSwitchState()
+        setDefaultPreferences()
+        setSwitches()
     }
     
- 
-    func checkSwitchState() {
+    
+    func setDefaultPreferences() {
+        if (userDefaults.object(forKey: CASES_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: CASES_SWITCH_KEY)
+        }
+        if (userDefaults.object(forKey: HOSP_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: HOSP_SWITCH_KEY)
+        }
+        if (userDefaults.object(forKey: VACC_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: VACC_SWITCH_KEY)
+        }
+        if (userDefaults.object(forKey: DEATHS_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: DEATHS_SWITCH_KEY)
+        }
+        if (userDefaults.object(forKey: REGIONS_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: REGIONS_SWITCH_KEY)
+        }
+        if (userDefaults.object(forKey: VACCBYAGE_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: VACCBYAGE_SWITCH_KEY)
+        }
+        if (userDefaults.object(forKey: VACCPOPULARITY_SWITCH_KEY) == nil) {
+            userDefaults.set(true, forKey: VACCPOPULARITY_SWITCH_KEY)
+        }
+      
+    }
+    
+    
+    func setSwitches() {
         if (userDefaults.bool(forKey: CASES_SWITCH_KEY)) {
             casesSwitch.setOn(true, animated: false)
         }
@@ -116,15 +135,13 @@ class PreferencesViewController: UIViewController {
             deathsSwitch.setOn(false, animated: true)
         }
         
-        
         if (userDefaults.bool(forKey: REGIONS_SWITCH_KEY)) {
             regionsSwitch.setOn(true, animated: false)
         }
         else {
             regionsSwitch.setOn(false, animated: true)
         }
-        
-        
+
         if (userDefaults.bool(forKey: VACCBYAGE_SWITCH_KEY)) {
             vaccByAgeSwitch.setOn(true, animated: false)
         }
@@ -138,9 +155,6 @@ class PreferencesViewController: UIViewController {
         else {
             vaccPopularitySwitch.setOn(false, animated: true)
         }
-        
-        
-        
     }
     
     

@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-CovidInfo/Pods-CovidInfo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework

@@ -1,5 +1,6 @@
 import UIKit
 import Charts
+import Reachability
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -9,16 +10,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     public var charts = [Chart]()
     var hidden = [false, false, false, false, false, false, false]
-    
-    let CASES_SWITCH_KEY = "cases"
-    let HOSP_SWITCH_KEY = "hospitalizations"
-    let VACC_SWITCH_KEY = "vaccinations"
-    let DEATHS_SWITCH_KEY = "deaths"
-    let REGIONS_SWITCH_KEY = "regions"
-    let VACCBYAGE_SWITCH_KEY = "vaccinationsByAge"
-    let VACCPOPULARITY_SWITCH_KEY = "vaccinePopularity"
         
     let userDefaults = UserDefaults.standard
+
+    let reachability = try! Reachability()
+
     
     override func viewDidAppear(_ animated: Bool) {
         checkUserPreferences()
@@ -31,14 +27,51 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         activityIndicator.startAnimating()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func checkInternetConnection() {
+        reachability.whenUnreachable = { _ in
+            
+            // Display popup
+            let controller = UIAlertController(title: "No Internet Detected", message: "This app requires an Internet connection", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let settings = UIAlertAction(title: "Settings", style: .default, handler: { action in
+                // Open Settings
+                if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+                }
+            } )
+            
+            controller.addAction(settings)
+            controller.addAction(ok)
 
-//        self.view.backgroundColor = UIColor(red: 0.07, green: 0.11, blue: 0.20, alpha: 1.00)
+            self.present(controller, animated: true, completion: nil)
+        }
+
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+    
+    func checkUserPreferences() {
+        hidden[0] = userDefaults.bool(forKey: CASES_SWITCH_KEY) ? false : true
+        hidden[1] = userDefaults.bool(forKey: HOSP_SWITCH_KEY) ? false : true
+        hidden[2] = userDefaults.bool(forKey: VACC_SWITCH_KEY) ? false : true
+        hidden[3] = userDefaults.bool(forKey: DEATHS_SWITCH_KEY) ? false : true
+        hidden[4] = userDefaults.bool(forKey: REGIONS_SWITCH_KEY) ? false : true
+        hidden[5] = userDefaults.bool(forKey: VACCBYAGE_SWITCH_KEY) ? false : true
+        hidden[6] = userDefaults.bool(forKey: VACCPOPULARITY_SWITCH_KEY) ? false : true
+    }
+    
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
         
+        checkInternetConnection()
         addLoadingAnimation()
         checkUserPreferences()
-
+        
         table.register(LineChartCell.nib(), forCellReuseIdentifier: LineChartCell.identifier)
         table.register(BarChartCell.nib(), forCellReuseIdentifier: BarChartCell.identifier)
 
@@ -118,19 +151,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.activityIndicator.stopAnimating()
             }
         }
-
-            
-
-    }
-    
-    func checkUserPreferences() {
-        hidden[0] = userDefaults.bool(forKey: CASES_SWITCH_KEY) ? false : true
-        hidden[1] = userDefaults.bool(forKey: HOSP_SWITCH_KEY) ? false : true
-        hidden[2] = userDefaults.bool(forKey: VACC_SWITCH_KEY) ? false : true
-        hidden[3] = userDefaults.bool(forKey: DEATHS_SWITCH_KEY) ? false : true
-        hidden[4] = userDefaults.bool(forKey: REGIONS_SWITCH_KEY) ? false : true
-        hidden[5] = userDefaults.bool(forKey: VACCBYAGE_SWITCH_KEY) ? false : true
-        hidden[6] = userDefaults.bool(forKey: VACCPOPULARITY_SWITCH_KEY) ? false : true
     }
     
 
